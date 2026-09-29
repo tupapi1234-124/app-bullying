@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boceto App - Prevención del Bullying y Acoso</title>
+    <!-- Tailwind CSS para un diseño moderno y rápido -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-100 font-sans text-slate-800">
+
+    <!-- Header / Barra de navegación -->
+    <header class="bg-indigo-700 text-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-shield-halved text-2xl"></i>
+                <span class="text-xl font-bold">SafeSpace (Boceto App)</span>
+            </div>
+            <span class="bg-indigo-600 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Versión Prototipo</span>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal (Simulando la vista previa de la App) -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+
+        <!-- Sección de Bienvenida / Introducción -->
+        <section class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-indigo-900 mb-2">Prevención y Apoyo contra el Bullying</h1>
+            <p class="text-slate-600 max-w-xl mx-auto">Este es el primer boceto funcional de nuestra aplicación de intervención rápida. Estamos aquí para escucharte, protegerte y actuar.</p>
+        </section>
+
+        <!-- Funciones Principales (Grid de Botones de Acción) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+            <!-- 1. Botón para Denuncias Anónimas -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200 hover:shadow-lg transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-user-secret"></i>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">Denuncia Anónima</h2>
+                    <p class="text-slate-600 text-sm mb-4">Reporta casos de acoso o bullying escolar de forma 100% confidencial y sin revelar tu identidad.</p>
+                </div>
+                <button onclick="abrirModal('denuncia')" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-4 rounded-xl transition flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>Realizar Denuncia</span>
+                </button>
+            </div>
+
+            <!-- 2. Botón para Ayuda Psicológica -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200 hover:shadow-lg transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">Soporte Psicológico</h2>
+                    <p class="text-slate-600 text-sm mb-4">Conéctate con profesionales de la salud mental capacitados para brindarte orientación emocional.</p>
+                </div>
+                <button onclick="abrirModal('psicologo')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Solicitar Ayuda</span>
+                </button>
+            </div>
+
+            <!-- 3. Botón para Programa SíseVe del Perú -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200 hover:shadow-lg transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h2 class="text-xl font-bold mb-2">Programa SíseVe (Perú)</h2>
+                    <p class="text-slate-600 text-sm mb-4">Accede directamente a la plataforma oficial del Ministerio de Educación del Perú contra la violencia escolar.</p>
+                </div>
+                <a href="https://www.siseve.pe" target="_blank" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl transition flex items-center justify-center space-x-2 text-center">
+                    <i class="fa-solid fa-external-link-alt"></i>
+                    <span>Ir a SíseVe Oficial</span>
+                </a>
+            </div>
+
+            <!-- 4. Botón de Alerta Policial Extrema -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-200 hover:shadow-lg transition flex flex-col justify-between border-l-4 border-red-500">
+                <div>
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-red-600 mb-2">Alerta de Emergencia</h2>
+                    <p class="text-slate-600 text-sm mb-4">Úsalo solo en casos extremos o de peligro inminente para notificar inmediatamente a las autoridades policiales.</p>
+                </div>
+                <button onclick="abrirModal('policia')" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-xl transition flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span>Alertar Autoridades</span>
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 py-6 text-center text-sm">
+        <p>&copy; 2026 Prototipo App Prevención Bullying. Diseñado para la seguridad escolar.</p>
+    </footer>
+
+    <!-- MODAL DINÁMICO (Simulación de Interacción de la App) -->
+    <div id="modalApp" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center px-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="cerrarModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="contenidoModal">
+                <!-- El contenido cambia dinámicamente según el botón presionado -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de interacción -->
+    <script>
+        const modal = document.getElementById('modalApp');
+        const contenidoModal = document.getElementById('contenidoModal');
+
+        function abrirModal(tipo) {
+            modal.classList.remove('hidden');
+
+            if (tipo === 'denuncia') {
+                contenidoModal.innerHTML = `
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-xl mx-auto mb-2"><i class="fa-solid fa-user-secret"></i></div>
+                        <h3 class="text-xl font-bold">Buzón de Denuncia Anónima</h3>
+                        <p class="text-xs text-slate-500">Tus datos no serán guardados.</p>
+                    </div>
+                    <form onsubmit="enviarAlerta(event, 'Denuncia enviada con éxito. El colegio ha sido notificado discretamente.')" class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Institución Educativa / Colegio:</label>
+                            <input type="text" required class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Nombre del colegio">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Detalles del caso:</label>
+                            <textarea required rows="3" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Describe lo que está sucediendo..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-500 text-white font-bold py-2 rounded-lg hover:bg-amber-600 transition">Enviar Denuncia</button>
+                    </form>
+                `;
+            } else if (tipo === 'psicologo') {
+                contenidoModal.innerHTML = `
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xl mx-auto mb-2"><i class="fa-solid fa-headset"></i></div>
+                        <h3 class="text-xl font-bold">Asistencia Psicológica</h3>
+                        <p class="text-xs text-slate-500">Un especialista te contactará de forma segura.</p>
+                    </div>
+                    <form onsubmit="enviarAlerta(event, 'Solicitud enviada. Un psicólogo se pondrá en contacto pronto.')" class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Nombre o Alias:</label>
+                            <input type="text" required class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="¿Cómo te gustaría que te llamemos?">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Correo o Teléfono de contacto:</label>
+                            <input type="text" required class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Tu medio de contacto">
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-600 text-white font-bold py-2 rounded-lg hover:bg-emerald-700 transition">Solicitar Conversación</button>
+                    </form>
+                `;
+            } else if (tipo === 'policia') {
+                contenidoModal.innerHTML = `
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xl mx-auto mb-2"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3 class="text-xl font-bold text-red-600">Alerta Policial de Emergencia</h3>
+                        <p class="text-xs text-slate-500">Esto enviará una señal de auxilio urgente.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-red-50 p-3 rounded-lg border border-red-200 text-xs text-red-700">
+                            <strong>Aviso Importante:</strong> Esta función simula la llamada directa a la línea de emergencia (105 en Perú). Utilízala solo si hay riesgo físico inmediato.
+                        </div>
+                        <button onclick="enviarAlerta(event, '🚨 ¡Alerta enviada a las autoridades policiales y de emergencia!')" class="w-full bg-red-600 text-white font-bold py-3 rounded-lg hover:bg-red-700 transition flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>CONFIRMAR LLAMADA DE EMERGENCIA</span>
+                        </button>
+                    </div>
+                `;
+            }
+        }
+
+        function cerrarModal() {
+            modal.classList.add('hidden');
+        }
+
+        function enviarAlerta(e, mensaje) {
+            e.preventDefault();
+            alert(mensaje);
+            cerrarModal();
+        }
+    </script>
+</body>
+</html>
